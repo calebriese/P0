@@ -1,8 +1,8 @@
-#include "tree.h"
-#include "node.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "tree.h"
+#include "node.h"
 
 Node * buildTree(FILE * myfile)
 {
@@ -70,20 +70,20 @@ void printInorder(Node * root, int level, char outName[256])
 
 void printPreorder(Node * root, int level, char outName[256])
 {
-    if(root!=NULL) // checking if the root is not null
+    if(root!=NULL)
     {
         printDisplay(root,level,outName);
-        printPreorder(root->left, level+1,outName); // visiting left child
-        printPreorder(root->right, level+1,outName);// visiting right child
+        printPreorder(root->left, level+1,outName);
+        printPreorder(root->right, level+1,outName);
     }
 }
 
 void printPostorder(Node * root, int level, char outName[256])
 {
-    if(root!=NULL) // checking if the root is not null
+    if(root!=NULL)
     {
-        printInorder(root->left, level+1,outName); // visiting left child
-        printInorder(root->right, level+1,outName);// visiting right child
+        printInorder(root->left, level+1,outName);
+        printInorder(root->right, level+1,outName);
         printDisplay(root,level,outName);
     }
 }
@@ -98,6 +98,7 @@ void printDisplay(Node * root, int level, char outName[256])
     {
         fprintf(outfile, " %s \n", root->listOfWords[i]);
     }
+    fclose(outfile);
 
     printf("Depth:%d, ", level * 2);
     printf("Level:%d, ", level);

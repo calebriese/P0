@@ -1,9 +1,8 @@
-#include <stdio.h> // do i need this
-#include "node.h"// do i need this too?
+#include <stdio.h>
+#include "node.h"
 
-
-#ifndef PROJECTZERO_TREE_H
-#define PROJECTZERO_TREE_H
+#ifndef TREE_H
+#define TREE_H
 
 Node *  insertNode(char word[6], Node * existingNode);
 Node * createNode(char word[]);

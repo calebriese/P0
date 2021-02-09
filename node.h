@@ -1,6 +1,5 @@
-#ifndef PROJECTZERO_NODE_H
-#define PROJECTZERO_NODE_H
-
+#ifndef NODE_H
+#define NODE_H
 
 typedef struct Node {
     char listOfWords[100][100]; //fixLater
@@ -9,7 +8,5 @@ typedef struct Node {
     struct Node * right;
     int numberOfWords;
 } Node;
-
-
 
 #endif
