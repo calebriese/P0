@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
-#include "node.h" //might not need
-#include "tree.c" //this is wrong but solve later
+#include "node.h"
+#include "tree.h"
 
 int main(int argc, char * argv[])
 {
