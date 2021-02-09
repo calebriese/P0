@@ -1,15 +1,15 @@
 CC 	 = gcc
-CFLAGS   =
-TARGET   = test
-OBJFILES = listmain.o list.o
+CFLAGS   = -std=c99
+TARGET   = OUTNAME
+OBJFILES = main.o tree.o
   
 $(TARGET): $(OBJFILES)  
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES) 
+	$(CC) -o $(TARGET) $(OBJFILES) $(CFLAGS) 
 
-listmain.o: listmain.c list.c
-	gcc -c listmain.c list.c
+main.o: main.c tree.c
+	gcc -c main.c tree.h -std=c99
 
-list.o: list.c   list.h	
-	gcc -c list.c
+list.o: tree.c tree.h node.h
+	gcc -c tree.c
 clean: 
 	rm -f $(OBJFILES) $(TARGET)
