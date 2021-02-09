@@ -20,16 +20,15 @@ Node * buildTree(FILE * myfile)
 
 Node * createNode(char word[])
 {
+    Node * newNode = (Node *)malloc(sizeof(Node));
+    newNode->firstTwoLettersOrLabel[0] = word[0];
+    newNode->firstTwoLettersOrLabel[1] = word[1];
+    strcpy(newNode->listOfWords[0], word);
+    newNode->numberOfWords = 1;
+    newNode->left = NULL;
+    newNode->right = NULL;
 
-    Node * p = (Node *)malloc(sizeof(Node));
-    p->firstTwoLettersOrLabel[0] = word[0];
-    p->firstTwoLettersOrLabel[1] = word[1];
-    strcpy(p->listOfWords[0],word);
-    p->numberOfWords = 1;
-    p->left = NULL;
-    p->right = NULL;
-
-    return p;
+    return newNode;
 }
 
 Node * insertNode(char word[6], Node * existingNode)

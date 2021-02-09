@@ -15,11 +15,11 @@ int main(int argc, char * argv[])
         if (!input)
         {
             fprintf(stderr, "Could not open the file.\n");
-            abort(); //maybe EXIT() instead
+            abort();
         }
         else
         {
-            //remove extension
+            //removes extension
             char * lastIndex = argv[1] + strlen(argv[1]);
             while (lastIndex > argv[1] && * lastIndex != '.')
             {
@@ -42,17 +42,14 @@ int main(int argc, char * argv[])
         fgets(tmpString, 2047, stdin);
         fprintf(input, "%s", tmpString);
 
-        rewind(input);
+        rewind(input); //sets file to beginning
         strcpy(outName,"output");
     }
     else
     {
         fprintf(stderr, "Incorrect Usage: Too many arguments\n");
-        abort();//is this the best way to end?
+        abort();
     }
-
-
-
 
     Node * myNode = buildTree(input);
 
@@ -66,11 +63,12 @@ int main(int argc, char * argv[])
     strcat(post,".postorder");
     strcat(in,".inorder");
 
+    printf("\nPreorder\n");
     printPreorder(myNode,0, pre);
+    printf("\nPostorder\n");
     printPostorder(myNode,0, post);
+    printf("\nInorder\n");
     printInorder(myNode,0, in);
-
-
 
     return 0;
 }
